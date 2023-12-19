@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "810199015669",
+    "project_id": "tiktok-reel-b6163",
+    "storage_bucket": "tiktok-reel-b6163.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810199015669:android:46f8e927bad871ffcbe5bc",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_14"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMyRR6szw00F9gKCbDKdcfGsTQmQriQSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
