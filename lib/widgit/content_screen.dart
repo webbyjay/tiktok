@@ -22,24 +22,21 @@ class _ContentScreenState extends State<ContentScreen> {
   void initState() {
     super.initState();
     initializePlayer();
-    // widget._videoPlayerController.addListener(checkVideo);
   }
 
   Future initializePlayer() async {
     _videoPlayerController = VideoPlayerController.network(widget.src!);
     await Future.wait([_videoPlayerController.initialize()]);
     _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController,
-      autoPlay: true,
-      showControls: true,
-      allowedScreenSleep: false,
-      autoInitialize: false,
-      looping: true,
-      aspectRatio: MediaQuery.of(context).size.width /
-          MediaQuery.of(context).size.height,
-    );
-    Duration durationOfVideo = _videoPlayerController.value.duration;
-
+        videoPlayerController: _videoPlayerController,
+        autoPlay: true,
+        showControls: true,
+        allowedScreenSleep: false,
+        autoInitialize: false,
+        allowFullScreen: true,
+        looping: true,
+        allowPlaybackSpeedChanging: true,
+        aspectRatio: 23 / 40);
     setState(() {});
   }
 
