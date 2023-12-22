@@ -3,7 +3,8 @@
     <application
         android:label="flutter_application_14"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -21,7 +22,7 @@
               android:resource="@style/NormalTheme"
               />
             <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyDU5hOGTUTbZ2TddZJMr3Kg14eLq99EHPc"/>
+               android:value="AIzaSyDMJtENIFGKq9Y-U1L4VsNz2k-BLq7pO7I"/>           
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

@@ -29,12 +29,12 @@ class Page3 extends StatelessWidget {
                           // mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            Text(
+                            const Text(
                               'Share a video!',
                               style:
                                   TextStyle(fontSize: 20, color: Colors.black),
                             ),
-                            DottedLine(
+                            const DottedLine(
                               direction: Axis.horizontal,
                               alignment: WrapAlignment.center,
                               lineLength: double.infinity,
@@ -48,7 +48,7 @@ class Page3 extends StatelessWidget {
                               // dashGapGradient: [Colors.red, Colors.blue],
                               dashGapRadius: 0.0,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             GestureDetector(
@@ -58,7 +58,7 @@ class Page3 extends StatelessWidget {
                                 final XFile? image = await picker.pickImage(
                                     source: ImageSource.gallery);
                               },
-                              child: Text(
+                              child: const Text(
                                 "Upload from Camaera Roll",
                                 style: TextStyle(
                                     color: Colors.blue,
@@ -66,7 +66,7 @@ class Page3 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
-                            DottedLine(
+                            const DottedLine(
                               direction: Axis.horizontal,
                               alignment: WrapAlignment.center,
                               lineLength: double.infinity,
@@ -80,7 +80,7 @@ class Page3 extends StatelessWidget {
                               // dashGapGradient: [Colors.red, Colors.blue],
                               dashGapRadius: 0.0,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             GestureDetector(
@@ -90,7 +90,7 @@ class Page3 extends StatelessWidget {
                                 final XFile? image = await picker.pickVideo(
                                     source: ImageSource.camera);
                               },
-                              child: Text(
+                              child: const Text(
                                 "Record Now",
                                 style: TextStyle(
                                     color: Colors.blue,
@@ -98,10 +98,10 @@ class Page3 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
-                            DottedLine(
+                            const DottedLine(
                               direction: Axis.horizontal,
                               alignment: WrapAlignment.center,
                               lineLength: double.infinity,
@@ -115,14 +115,14 @@ class Page3 extends StatelessWidget {
                               //\ dashGapGradient: [Colors.red, Colors.blue],
                               dashGapRadius: 0.0,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             GestureDetector(
                               onTap: () {
                                 Navigator.pop(context);
                               },
-                              child: Text(
+                              child: const Text(
                                 "Cancel",
                                 style: TextStyle(
                                     color: Colors.blue,

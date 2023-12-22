@@ -72,8 +72,8 @@ class _Page1State extends State<Page1> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                   child: Container(
-                    height: 90,
-                    width: 170,
+                    height: 50,
+                    width: 210,
                     // Add padding around the search bar
 
                     // Use a Material design search bar
