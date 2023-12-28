@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_14/screen/Login_Pages.dart';
+import 'package:flutter_application_14/screen/Login_Sigin_page.dart';
 import 'package:flutter_application_14/screen/home_page.dart';
 
 class Splash_Screen extends StatefulWidget {
@@ -16,7 +18,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => HomePage())));
+            context, MaterialPageRoute(builder: (context) => Login_Pages())));
   }
 
   @override
@@ -24,7 +26,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
-        child: Image.asset("assets/Atmosfy.png", fit: BoxFit.cover),
+        child: Image.asset("assets/Atmosfy.png", fit: BoxFit.fill),
       ),
     );
   }

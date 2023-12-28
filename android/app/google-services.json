@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "810199015669",
-    "project_id": "tiktok-reel-b6163",
-    "storage_bucket": "tiktok-reel-b6163.appspot.com"
+    "project_number": "419005577556",
+    "project_id": "tiktok-reel-final",
+    "storage_bucket": "tiktok-reel-final.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:810199015669:android:46f8e927bad871ffcbe5bc",
+        "mobilesdk_app_id": "1:419005577556:android:c307cba5cc0ccfa78bb0c1",
         "android_client_info": {
           "package_name": "com.example.flutter_application_14"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "419005577556-fg8p69ko00gn2ps3b9r4h524atut2rv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDMyRR6szw00F9gKCbDKdcfGsTQmQriQSc"
+          "current_key": "AIzaSyDoaQGpVPbPcUHpjOuwdeUYWFT9qnGylls"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419005577556-fg8p69ko00gn2ps3b9r4h524atut2rv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

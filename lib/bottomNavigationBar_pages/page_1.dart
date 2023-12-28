@@ -67,50 +67,81 @@ class _Page1State extends State<Page1> {
                   );
                 }),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 5, vertical: 30),
                   child: Container(
                     height: 50,
-                    width: 210,
+                    width: 260,
                     // Add padding around the search bar
 
-                    // Use a Material design search bar
-                    child: TextField(
-                      controller: _searchController,
-                      decoration: InputDecoration(
-                        focusColor: Colors.black,
-                        hintText: 'Search for other Spolight cites',
-                        // Add a clear button to the search bar
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.clear),
-                          onPressed: () => _searchController.clear(),
-                        ),
-                        // Add a search icon or button to the search bar
-                        prefixIcon: IconButton(
-                          icon: Icon(Icons.search),
-                          onPressed: () {
-                            // Perform the search here
-                          },
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
+                    // // Use a Material design search bar
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 1),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: const Color(0xFFFFFFFF),
+                          isDense: true,
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 15.0),
+                          /* -- Text and Icon -- */
+                          hintText: "Search Products...",
+                          hintStyle: const TextStyle(
+                            fontSize: 18,
+                            color: Color(0xFFB3B1B1),
+                          ), // TextStyle
+                          suffixIcon: const Icon(
+                            Icons.search,
+                            size: 26,
+                            color: Colors.black54,
+                          ), // Icon
+                          /* -- Border Styling -- */
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(45.0),
+                            borderSide: const BorderSide(
+                              width: 2.0,
+                              color: Color(0xFFFF0000),
+                            ), // BorderSide
+                          ), // OutlineInputBorder
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(45.0),
+                            borderSide: const BorderSide(
+                              width: 2.0,
+                              color: Colors.grey,
+                            ), // BorderSide
+                          ), // OutlineInputBorder
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(45.0),
+                            borderSide: const BorderSide(
+                              width: 2.0,
+                              color: Colors.grey,
+                            ), // BorderSide
+                          ), // OutlineInputBorder
+                        ), // InputDecoration
+                      ), // TextField
                     ),
                   ),
                 ),
                 Spacer(),
                 IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.access_alarm,
-                    size: 50,
-                    color: Colors.white,
-                  ),
-                )
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.add_road,
+                      color: Colors.white,
+                      size: 50,
+                    )),
+                // IconButton(
+                //   onPressed: () {},
+                //   icon: Icon(
+                //     Icons.access_alarm,
+                //     size: 50,
+                //     color: Colors.white,
+                //   ),
+                // )
               ],
             ),
             // Padding(

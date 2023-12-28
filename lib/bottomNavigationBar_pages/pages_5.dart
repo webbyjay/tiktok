@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_14/screen/Edit_page.dart';
 import 'package:flutter_application_14/tabbar/tab1.dart';
@@ -6,8 +7,15 @@ import 'package:flutter_application_14/tabbar/tab3.dart';
 import 'package:flutter_application_14/widgit/Activity.dart';
 import 'package:flutter_application_14/widgit/more.dart';
 
-class Page5 extends StatelessWidget {
+class Page5 extends StatefulWidget {
   const Page5({Key? key}) : super(key: key);
+
+  @override
+  State<Page5> createState() => _Page5State();
+}
+
+class _Page5State extends State<Page5> {
+  User? user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +35,21 @@ class Page5 extends StatelessWidget {
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Activity()),
-                          );
-                        },
-                        icon: const Icon(
-                          Icons.notification_add,
-                          size: 25,
-                          color: Colors.white,
-                        )),
+                    Container(
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Activity()),
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.notification_add,
+                            size: 25,
+                            color: Colors.white,
+                          )),
+                    ),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(
@@ -79,6 +89,7 @@ class Page5 extends StatelessWidget {
                 ),
               ),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,18 +97,39 @@ class Page5 extends StatelessWidget {
                       Container(
                         height: 80,
                         width: 80,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://googleflutter.com/sample_image.jpg'),
-                              fit: BoxFit.fill),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(user!.photoURL!),
+                          radius: 20,
                         ),
                       ),
-                      const Padding(
+                      Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        child: Text("Jay shah"),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(user!.displayName!),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 30,
+                                ),
+                                Column(
+                                  children: [Text("0"), Text("Followers")],
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Column(
+                                  children: [Text("10"), Text("Following")],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       const Spacer(),
                       IconButton(
@@ -111,8 +143,10 @@ class Page5 extends StatelessWidget {
                           icon: const Icon(Icons.edit)),
                     ],
                   ),
-                  Text("data"),
-                  Text("data")
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text("Jay S"),
+                  )
                 ],
               ),
               const TabBar(

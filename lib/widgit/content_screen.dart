@@ -17,6 +17,7 @@ class _ContentScreenState extends State<ContentScreen> {
   late VideoPlayerController _videoPlayerController;
   ChewieController? _chewieController;
   bool _liked = false;
+  bool isLoading = true;
 
   @override
   void initState() {
@@ -26,6 +27,7 @@ class _ContentScreenState extends State<ContentScreen> {
 
   Future initializePlayer() async {
     _videoPlayerController = VideoPlayerController.network(widget.src!);
+
     await Future.wait([_videoPlayerController.initialize()]);
     _chewieController = ChewieController(
         videoPlayerController: _videoPlayerController,
@@ -36,6 +38,11 @@ class _ContentScreenState extends State<ContentScreen> {
         allowFullScreen: true,
         looping: true,
         allowPlaybackSpeedChanging: true,
+        // showControls: true,
+        // allowedScreenSleep: false,
+        // autoInitialize: false,
+        // allowFullScreen: true,
+        // allowPlaybackSpeedChanging: true,
         aspectRatio: 23 / 40);
     setState(() {});
   }
@@ -56,6 +63,12 @@ class _ContentScreenState extends State<ContentScreen> {
                 _chewieController!.videoPlayerController.value.isInitialized
             ? GestureDetector(
                 onDoubleTap: () {
+                  setState(() {
+                    _videoPlayerController.value.isPlaying
+                        ? _videoPlayerController.pause()
+                        : _videoPlayerController.play();
+                  });
+
                   // setState(() {
                   //   _liked = !_liked;
                   //   if (_videoPlayerController.value.isPlaying) {
@@ -75,7 +88,7 @@ class _ContentScreenState extends State<ContentScreen> {
                 children: [
                   CircularProgressIndicator(),
                   SizedBox(height: 10),
-                  Text('Loading...')
+                  // Text('Loading...')
                 ],
               ),
         if (_liked)

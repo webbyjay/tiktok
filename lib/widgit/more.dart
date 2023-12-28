@@ -13,6 +13,7 @@ class _More_ScreenState extends State<More_Screen> {
     return Scaffold(
       appBar: AppBar(title: const Text("More")),
       body: SingleChildScrollView(
+        physics: AlwaysScrollableScrollPhysics(),
         child: Column(
           children: [
             const Padding(
@@ -85,8 +86,11 @@ class _More_ScreenState extends State<More_Screen> {
               height: 70,
               color: Colors.black,
               child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.contact_support_outlined,
                     color: Colors.white,
@@ -108,8 +112,11 @@ class _More_ScreenState extends State<More_Screen> {
               height: 70,
               color: Colors.black,
               child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.contact_support_outlined,
                     color: Colors.white,
@@ -131,8 +138,11 @@ class _More_ScreenState extends State<More_Screen> {
               height: 70,
               color: Colors.black,
               child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.contact_support_outlined,
                     color: Colors.white,
@@ -154,8 +164,11 @@ class _More_ScreenState extends State<More_Screen> {
               height: 70,
               color: Colors.black,
               child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.contact_support_outlined,
                     color: Colors.white,
@@ -186,6 +199,9 @@ class _More_ScreenState extends State<More_Screen> {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.contact_support_outlined,
                     color: Colors.white,
@@ -209,6 +225,9 @@ class _More_ScreenState extends State<More_Screen> {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.contact_support_outlined,
                     color: Colors.white,
@@ -232,6 +251,9 @@ class _More_ScreenState extends State<More_Screen> {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.contact_support_outlined,
                     color: Colors.white,
@@ -255,6 +277,12 @@ class _More_ScreenState extends State<More_Screen> {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Icon(
                     Icons.logout,
                     color: Colors.white,

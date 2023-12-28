@@ -6,15 +6,18 @@ class OptionsScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          SizedBox(),
+          SizedBox(
+            height: 250,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 110),
+                  SizedBox(height: 220),
                   Row(
                     children: [
                       CircleAvatar(

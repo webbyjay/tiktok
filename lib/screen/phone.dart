@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_14/screen/home_page.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
-class Phone_Number extends StatefulWidget {
-  const Phone_Number({super.key});
+class Phone_num extends StatefulWidget {
+  const Phone_num({super.key});
 
   @override
-  State<Phone_Number> createState() => _Phone_NumberState();
+  State<Phone_num> createState() => _Phone_numState();
 }
 
-class _Phone_NumberState extends State<Phone_Number> {
+class _Phone_numState extends State<Phone_num> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   final TextEditingController controller = TextEditingController();
   String initialCountry = 'NG';
   PhoneNumber number = PhoneNumber(isoCode: 'NG');
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text("Phone Number"),
-          actions: <Widget>[
-            ElevatedButton(
-              // textColor: Colors.white,
-              onPressed: () {
-                formKey.currentState?.save();
-              },
-              child: Text("Save"),
-            ),
-          ],
+          // actions: <Widget>[
+          //   ElevatedButton(
+          //     // textColor: Colors.white,
+          //     onPressed: () {
+          //       formKey.currentState?.save();
+          //     },
+          //     child: Text("Save"),
+          //   ),
+          // ],
         ),
         body: Form(
           key: formKey,
@@ -60,6 +60,24 @@ class _Phone_NumberState extends State<Phone_Number> {
                     print('On Saved: $number');
                   },
                 ),
+                SizedBox(
+                  height: 40,
+                ),
+                Container(
+                  height: 50,
+                  width: 190,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      formKey.currentState?.save();
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.pink,
+                    ),
+                    child: Text('Save'),
+                  ),
+                )
                 // ElevatedButton(
                 //   onPressed: () {
                 //     formKey.currentState?.validate();
@@ -82,20 +100,5 @@ class _Phone_NumberState extends State<Phone_Number> {
             ),
           ),
         ));
-  }
-
-  void getPhoneNumber(String phoneNumber) async {
-    PhoneNumber number =
-        await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'US');
-
-    setState(() {
-      this.number = number;
-    });
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
   }
 }

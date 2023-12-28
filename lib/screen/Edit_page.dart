@@ -1,4 +1,5 @@
 import 'package:dotted_line/dotted_line.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_14/screen/Phone_number.dart';
 import 'package:flutter_application_14/widgit/Soicial.dart';
@@ -12,6 +13,8 @@ class Edit_page extends StatefulWidget {
 }
 
 class _Edit_pageState extends State<Edit_page> {
+  User? user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +30,9 @@ class _Edit_pageState extends State<Edit_page> {
               child: Container(
                 height: 80,
                 width: 80,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        'https://w7.pngwing.com/pngs/703/24/png-transparent-woman-in-orange-tank-dress-alia-bhatt-badrinath-ki-dulhania-1080p-alia-bhatt-celebrities-black-hair-girl-thumbnail.png'),
-                    scale: 1.0,
-                  ),
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(user!.photoURL!),
+                  radius: 20,
                 ),
               ),
             ),
@@ -112,8 +111,8 @@ class _Edit_pageState extends State<Edit_page> {
                                   onTap: () async {
                                     final ImagePicker picker = ImagePicker();
                                     // Pick an image.
-                                    final XFile? image = await picker.pickVideo(
-                                        source: ImageSource.camera);
+                                    final XFile? image = await picker.pickImage(
+                                        source: ImageSource.gallery);
                                   },
                                   child: const Text(
                                     "Choose from Camera Roll",
@@ -216,7 +215,10 @@ class _Edit_pageState extends State<Edit_page> {
                   width: 30,
                 ),
                 Expanded(
-                  child: TextFormField(),
+                  child: TextFormField(
+                      decoration: InputDecoration(
+                    labelText: user!.displayName!,
+                  )),
                 ),
               ],
             ),
@@ -230,7 +232,10 @@ class _Edit_pageState extends State<Edit_page> {
                   width: 10,
                 ),
                 Expanded(
-                  child: TextFormField(),
+                  child: TextFormField(
+                      decoration: InputDecoration(
+                    labelText: user!.displayName!,
+                  )),
                 ),
               ],
             ),
@@ -244,7 +249,10 @@ class _Edit_pageState extends State<Edit_page> {
                   width: 40,
                 ),
                 Expanded(
-                  child: TextFormField(),
+                  child: TextFormField(
+                      decoration: InputDecoration(
+                    labelText: user!.email!,
+                  )),
                 ),
               ],
             ),

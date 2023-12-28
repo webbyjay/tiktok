@@ -14,40 +14,44 @@ class _Soicial_ScreenState extends State<Soicial_Screen> {
       children: [
         Container(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.web)),
               Text("Add a website"),
+              Spacer(),
               IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
             ],
           ),
         ),
         Container(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.facebook)),
               Text("Add Instagram"),
+              Spacer(),
               IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
             ],
           ),
         ),
         Container(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.music_note)),
               Text("Add TikTok"),
+              Spacer(),
               IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
             ],
           ),
         ),
         Container(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.add)),
               Text("Add Another Link"),
+              Spacer(),
               IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
             ],
           ),
